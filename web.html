@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スクタク Web版のご案内</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: #f8fafc;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: #0057b8;
+      color: white;
+      padding: 1.2rem 2rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      color: white;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .hero h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.8s ease-out;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      color: #0057b8;
+      border-left: 6px solid #0057b8;
+      padding-left: 10px;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      line-height: 1.8;
+    }
+
+    .notice {
+      background: #fff3cd;
+      border: 1px solid #ffeeba;
+      color: #856404;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .button-container {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .button-container a {
+      display: inline-block;
+      background: #0072ff;
+      color: white;
+      text-decoration: none;
+      padding: 0.9rem 1.8rem;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .button-container a:hover {
+      background: #0057b8;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #00479a;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 4rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+  <header>
+    <h1>スクタク</h1>
+    <div id="menu-btn" class="menu-btn">☰</div>
+    <nav id="menu" class="menu">
+      <a href="index.html">  ホーム</a>
+      <a href="admin.html">運営会社管理画面</a>
+      <a href="member.html">チームメンバー</a>
+      
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>どこからでもアクセスできる「スクタク Web版」</h2>
+    <p>通学予約・確認・運行管理をスマートに。</p>
+  </div>
+
+  <section>
+    <h3>🌐 Web版の概要</h3>
+    <p>
+      スクタクWeb版では、アプリをインストールせずにブラウザから利用できます。  
+      パソコン・スマートフォン・タブレットすべてに対応し、外出先でも管理や予約が可能です。
+    </p>
+
+    <div class="notice">
+      ⚠️ <strong>ご注意：</strong><br>
+      Web版では、Google Maps などの <b>地図を利用する機能は使用できません。</b><br>
+      そのため、配車の地図表示やルート確認などはアプリ版のみ対応しています。
+    </div>
+  </section>
+
+  <section>
+    <h3>👩‍🎓 生徒・保護者の方</h3>
+    <ul>
+      <li>カレンダーから通学タクシーを予約</li>
+      <li>予約履歴や配車状況の確認</li>
+      <li>運転手・車両情報の閲覧</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>🏫 自治体・学校関係者の方</h3>
+    <ul>
+      <li>自治体専用アカウントでの運行管理</li>
+      <li>登録中の生徒・車両・ドライバーの統合管理</li>
+      <li>運行レポート・請求書データの自動生成（開発中）</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>🚕 タクシー運転手・事業者の方</h3>
+    <ul>
+      <li>当日予約・スケジュールの確認</li>
+      <li>生徒の乗車・降車記録を簡単登録</li>
+      <li>自治体との連携運行管理</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>✨ Web版でできることまとめ</h3>
+    <ul>
+      <li>マルチデバイス対応（PC・スマホ・タブレット）</li>
+      <li>自治体コードによる安全なアクセス管理</li>
+      <li>リアルタイム予約反映</li>
+      <li>地図機能を除く基本操作をすべてブラウザで利用可能</li>
+      <li>将来的には決済・統計レポート機能も追加予定</li>
+    </ul>
+
+    <div class="button-container">
+      <a href="https://school-taxi-web.pages.dev" target="_blank">➡ Web版を開く</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 スクタク / 運営会社: 株式会社スクールタクシー開発
+  </footer>
+
+  <script>
+    // スクロールアニメーション
+    const sections = document.querySelectorAll("section");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("show");
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+  <script src="script.js"></script>
+
+</body>
+</html>

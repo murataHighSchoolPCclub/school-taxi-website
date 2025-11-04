@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>スクールタクシー｜チーム紹介</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap');
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: linear-gradient(180deg, #f5f8fc, #ffffff);
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+    h2 {
+      text-align: center;
+      font-size: 26px;
+      margin-bottom: 40px;
+      color: #0056b3;
+    }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+    .member {
+      background: white;
+      border-radius: 16px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      transform: translateY(30px);
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+    .member.visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 3px solid #007bff;
+    }
+    .role {
+      color: #007bff;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+    .name {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .desc {
+      font-size: 14px;
+      color: #555;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #f0f4ff;
+      color: #555;
+      margin-top: 60px;
+      font-size: 14px;
+    }
+    footer a {
+      color: #007bff;
+      text-decoration: none;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>スクタク</h1>
+    <div id="menu-btn" class="menu-btn">☰</div>
+    <nav id="menu" class="menu">
+      <a href="index.html">ホーム</a>
+      <a href="admin.html">運営会社管理画面</a>
+      <a href="web.html">Web版のご案内</a>
+      
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>私たちがスクタクを支えています</h2>
+
+    <div class="team-grid">
+      <div class="member">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Leader">
+        <div class="role">リーダー</div>
+        <div class="name">遠藤 煌星</div>
+        <div class="desc">スクタク全体の方向性を定め、企画・開発・運営を統括。常に新しいアイデアでチームを牽引。</div>
+      </div>
+
+      <div class="member">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Sales">
+        <div class="role">営業</div>
+        <div class="name">渡邉 康輔</div>
+        <div class="desc">自治体やタクシー会社との連携を担当。地域とアプリを繋ぐ架け橋。</div>
+      </div>
+
+      <div class="member">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Engineer">
+        <div class="role">エンジニア</div>
+        <div class="name">髙瀬 岳</div>
+        <div class="desc">FlutterとFirebaseの専門家。アプリの開発と品質向上を担当。</div>
+      </div>
+
+      <div class="member">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Advisor">
+        <div class="role">最強顧問</div>
+        <div class="name">田村 郷</div>
+        <div class="desc">長年の業界知識をもとにスクタクを技術面・戦略面からサポート。</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 School Taxi / スクールタクシー — <a href="index.html">公式サイトへ戻る</a>
+  </footer>
+
+  <script>
+    // スクロールアニメーション（要素が見えたらフェードイン）
+    const members = document.querySelectorAll('.member');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    members.forEach(m => observer.observe(m));
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
